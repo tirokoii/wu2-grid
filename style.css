@@ -1,0 +1,34 @@
+.grid-container * {
+    border: 2px solid black;
+    height: auto;
+    width: auto;
+    margin: 0;
+}
+
+.grid-container {
+    height: 97vh;
+    display: grid;
+}
+
+.title {
+    grid-row: 1;
+    grid-column: 1;
+    width: 2rem;
+    height: 100%;
+    text-align: end;
+    writing-mode: vertical-lr;
+    transform: scale(-1);
+    text-orientation: sideways;
+    /* transform: rotate(90deg); */
+}
+
+.heading-1 {
+    grid-row: 1 / 15;
+    grid-column: 2 / 30;
+    width: 15rem;
+    height: 15rem;
+}
+
+.stand-alone-name {
+    grid-row: 2 / 15;
+}

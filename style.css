@@ -1,34 +1,127 @@
-.grid-container * {
-    border: 2px solid black;
-    height: auto;
-    width: auto;
+html *{
     margin: 0;
 }
 
+.grid-container * {
+    border: 2px solid black;
+    margin: 0;
+    max-height: 1000px;
+}
+
 .grid-container {
-    height: 97vh;
+    height: 100vh;
+    overflow: hidden;
     display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 0.2fr 1fr 1fr 1fr 2fr 1.5fr 2.5fr;
 }
 
 .title {
-    grid-row: 1;
+    grid-row: 1 / 6;
     grid-column: 1;
-    width: 2rem;
+    width: 2ch;
     height: 100%;
     text-align: end;
     writing-mode: vertical-lr;
     transform: scale(-1);
-    text-orientation: sideways;
-    /* transform: rotate(90deg); */
-}
-
-.heading-1 {
-    grid-row: 1 / 15;
-    grid-column: 2 / 30;
-    width: 15rem;
-    height: 15rem;
+    font-size: 3rem;
 }
 
 .stand-alone-name {
-    grid-row: 2 / 15;
+    grid-row: 1;
+    grid-column: 4;
+}
+
+.heading-1 {
+    grid-row: 1;
+    grid-column: 2 / 4;
+    align-content: end;
+    padding-bottom: 2ch;
+    font-size: 1.6rem;
+}
+
+.bread-1 {
+    grid-row: 2 / 4;
+    grid-column: 2;
+    font-size: 0.95rem;
+}
+
+.bread-2 {
+    grid-row: 2 / 4;
+    grid-column: 3;
+    font-size: 0.95rem;
+}
+
+.bread-3 {
+    grid-row: 4;
+    grid-column: 2;
+    font-size: 0.8rem;
+}
+
+.bread-4 {
+    grid-row: 4;
+    grid-column: 3;
+    font-size: 0.8rem;
+}
+
+.bread-5 {
+    grid-row: 5 / 7;
+    grid-column: 3;
+    font-size: 1rem;
+}
+
+.heading-2 {
+    grid-row: 4 / 7;
+    grid-column: 4;
+}
+
+.bread-6 {
+    grid-row: 4 / 7;
+    grid-column: 4;
+    font-size: 0.8rem;
+    padding-top: 10ch;
+}
+
+.image-1 {
+    background-color: rgb(207, 207, 207);
+    grid-row: 5 / 7;
+    grid-column: 2;
+}
+
+.image-2 {
+    background-color: bisque;
+    grid-row: 1 / 6;
+    grid-column: 5 / 7;
+    z-index: -1;
+}
+
+.image-3 {
+    background-color: blue;
+    grid-row: 1 / 6;
+    grid-column: 5 / 8;
+    z-index: -2;
+}
+
+.qoute {
+    grid-row: 5;
+    grid-column: 5 / 8;
+    z-index: 2;
+}
+
+.bread-7 {
+    grid-row: 6;
+    grid-column: 5;
+    font-size: 0.8rem;
+}
+
+.bread-8 {
+    grid-row: 6;
+    grid-column: 6;
+    font-size: 0.8rem;
+}
+
+.bread-9 {
+    grid-row: 6;
+    grid-column: 7;
+    font-size: 1rem;
 }

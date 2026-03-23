@@ -6,19 +6,46 @@ html *{
 
 body {
     background-color: rgb(15, 20, 24);
+    overflow: hidden;
+}
+
+.blur-effect {
+    position: absolute;
+    right: -500px;
+    top: -500px;
+    width: 70%;
+    height: 100%;
+    background-color: #ffffff;
+    filter: blur(100px) opacity(0.4);
+    mix-blend-mode: hard-light;
+    z-index: 2;
+}
+
+.blur-effect-2 {
+    position: absolute;
+    right: 200px;
+    top: -500px;
+    width: 70%;
+    height: 100%;
+    background-color: #ffffff;
+    filter: blur(100px) opacity(0.2);
+    mix-blend-mode: hard-light;
+    z-index: 2;
 }
 
 .background {
     position: absolute;
+    z-index: -3;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
-    display: grid;
-}
-
-.background * {
-    border: 2px solid white;
+    width: 100%;
+    height: 100%;
+    background-image:
+    linear-gradient(40deg, black, transparent 50%), 
+    repeating-linear-gradient(rgba(235, 61, 61, 0.4), transparent 3px, transparent 30px),
+    repeating-linear-gradient(to right, rgba(186, 45, 45, 0.515) 2px, transparent 3px, transparent 32px);
 }
 
 .grid-container * {
@@ -30,7 +57,6 @@ body {
     height: 100vh;
     overflow: hidden;
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-columns: 0.2fr 1fr 1fr 1fr 2fr 1.5fr 2.5fr;
 }
 
@@ -56,16 +82,6 @@ body {
     width: 7ch;
 }
 
-.stand-alone-name {
-    grid-row: 1;
-    grid-column: 4 / 6;
-    font-size: 2.5rem;
-    font-family: "Mr Dafoe", cursive;;
-    color: transparent;
-    background: linear-gradient(45deg, #00ddff, #ff094f);
-    background-clip: text;
-}
-
 .heading-1 {
     grid-row: 1;
     grid-column: 2 / 4;
@@ -76,6 +92,8 @@ body {
     color: transparent;
     background: linear-gradient(45deg, #f3ec78, #ff094f);
     background-clip: text;
+    border-bottom: 5px double rgb(219, 82, 82);
+    border-radius: 6px;
 }
 
 .bread-1 {
@@ -84,14 +102,20 @@ body {
     font-size: clamp(0.55rem, 0.8vw, 1.1rem);
     font-family: "Nova Flat", system-ui;
     color: rgb(223, 228, 201);
+    padding: 5px;
+    border-right: 1.5px solid rgb(249, 61, 61);
+    border-radius: 10px;
 }
 
 .bread-2 {
     grid-row: 2 / 4;
     grid-column: 3;
-    font-size: clamp(0.55rem, 0.8vw, 1.1rem);
+    font-size: clamp(0.55rem, 0.78vw, 1.08rem);
     font-family: "Nova Flat", system-ui;
     color: rgb(228, 226, 201);
+    padding: 5px;
+    border-right: 1.5px solid rgb(249, 174, 61);
+    border-radius: 10px;
 }
 
 .bread-3 {
@@ -100,6 +124,9 @@ body {
     font-size: clamp(0.4rem, 0.6vw, 1rem);
     font-family: "Nova Flat", system-ui;
     color: rgb(223, 228, 201);
+    padding: 5px;
+    border-right: 1.5px solid rgb(249, 61, 61);
+    border-radius: 10px;
 }
 
 .bread-4 {
@@ -109,14 +136,22 @@ body {
     font-family: "Nova Flat", system-ui;
     color: rgb(223, 228, 201);
     align-self: flex-end;
+    padding: 5px;
+    border-left: 1.5px solid rgb(249, 158, 61);
+    border-radius: 10px;
 }
 
 .bread-5 {
     grid-row: 5 / 7;
     grid-column: 3;
-    font-size: clamp(0.65rem, 0.85vw, 1.2rem);
+    font-size: clamp(0.65rem, 0.83vw, 1.17rem);
     font-family: "Nova Flat", system-ui;
     color: rgb(223, 228, 201);
+    padding: 5px;
+    border-top: 1.5px solid rgb(249, 61, 61);
+    border-left: 1.5px solid rgb(249, 61, 61);
+    border-radius: 10px;
+    margin-inline: 2ch;
 }
 
 .heading-2 {
@@ -127,6 +162,7 @@ body {
     background: linear-gradient(45deg, #f3ec78, #ff094f);
     background-clip: text;
     align-self: flex-end;
+    border-bottom: 5px double rgb(219, 82, 82);
 }
 
 .bread-6 {
@@ -136,7 +172,8 @@ body {
     font-family: "Nova Flat", system-ui;
     color: rgb(223, 228, 201);
     margin: 0;
-
+    border: 2px solid rgba(240, 101, 8, 0.516);;
+    border-radius: 10px;
     b {
         margin: 0;
     }
@@ -145,7 +182,16 @@ body {
 .image-1 {
     grid-row: 5 / 7;
     grid-column: 2;
-    background-color: rgb(207, 207, 207);
+    width: 100%;
+    height: auto;
+    background-image: url(/flower.jpg);
+    background-color: #d6e013;
+    background-blend-mode: hard-light;
+    mask-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 100px;
+    background-position: -20px;
 }
 
 .image-2 {
@@ -155,18 +201,18 @@ body {
     height: 90%;
     z-index: -2;
     opacity: 0.5;
-    filter: blur(5px);
+    rotate: 80deg;
+    margin-left: 13ch;
+    filter: hue-rotate(180deg) opacity(0.3);
 }
 
 .image-3 {
     grid-row: 1 / 6;
     grid-column: 5 / 8;
-    mask-image: url(/clouds.png);
-    background: 
-    url(/clouds.png),
-    url(/clouds.png);
-    mask-repeat: no-repeat;
-    background-blend-mode:saturation, difference;
+    background:  url(/clouds.png), url(/clouds.png);
+    background-position: -2ch -20ch, -1ch -30ch;
+    background-repeat: no-repeat;
+    background-blend-mode: saturation, difference;
     width: 100%;
     height: 100%;
     z-index: -2;
@@ -176,10 +222,10 @@ body {
 .image-4 {
     grid-row: 1 / 6;
     grid-column: 5 / 8;
-    mask-image: url(/clouds_straight.png);
+    mask-image: url(/clouds.png);
     background: 
-    url(/clouds_straight.png),
-    url(/clouds_straight.png);
+    url(/clouds.png),
+    url(/clouds.png);
     mask-repeat: no-repeat;
     background-blend-mode: color-dodge, difference;
     width: 100%;
@@ -211,21 +257,42 @@ body {
     font-size: clamp(0.60rem, 0.8vw, 1.1rem);
     font-family: "Nova Flat", system-ui;
     color: rgb(223, 228, 201);
+    padding: 5px;
+    padding-left: 15px;
+    border-left: 1px solid rgb(229, 255, 0);
+    border-radius: 5px;
 }
 
 .bread-8 {
     grid-row: 6;
     grid-column: 6;
-    font-size: clamp(0.60rem, 0.7vw, 1.1rem);
+    font-size: clamp(0.60rem, 0.65vw, 1.1rem);
     font-family: "Nova Flat", system-ui;
     color: rgb(223, 228, 201);
+    padding: 5px;
+    padding-left: 15px;
+    border-left: 1px solid rgb(255, 255, 0);
+    border-radius: 5px;
 }
 
 .bread-9 {
     grid-row: 6;
     grid-column: 7;
-    font-size: clamp(0.65rem, 0.8vw, 1.2rem);
+    font-size: clamp(0.65rem, 0.77vw, 1.18rem);
     padding-bottom: 2ch;
     font-family: "Nova Flat", system-ui;
     color: rgb(223, 228, 201);
+    padding: 5px;
+    padding-left: 15px;
+    border-left: 1px solid rgb(255, 251, 0);
+    border-radius: 5px;
+}
+
+.remember {
+    grid-column: 4 / 6;
+    grid-row: 2;
+    font-family: "Nova Flat", system-ui;
+    font-size: clamp(0.65rem, 1.2vw, 1.18rem);
+    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0px 0px 20px #0D92CE, 0px 0px 100px #0D92CE, 0px 0px 100px #0D92CE, 0px 0px 100px #0D92CE, 0px 0px 100px #0D92CE, 0px 0px 100px #0D92CE, 0px 0px 100px #0D92CE;
+    color: #ffffff;
 }

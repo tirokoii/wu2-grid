@@ -9,6 +9,13 @@ body {
     overflow: hidden;
 }
 
+.texture {
+    position: absolute;
+    z-index: 3;
+    filter: opacity(0.1);
+    mix-blend-mode:hard-light;
+}
+
 .blur-effect {
     position: absolute;
     right: -500px;
@@ -103,7 +110,7 @@ body {
     font-family: "Nova Flat", system-ui;
     color: rgb(223, 228, 201);
     padding: 5px;
-    border-right: 1.5px solid rgb(249, 61, 61);
+    border-left: 1.5px solid rgb(249, 61, 61);
     border-radius: 10px;
 }
 
@@ -114,7 +121,7 @@ body {
     font-family: "Nova Flat", system-ui;
     color: rgb(228, 226, 201);
     padding: 5px;
-    border-right: 1.5px solid rgb(249, 174, 61);
+    border-left: 1.5px solid rgb(249, 174, 61);
     border-radius: 10px;
 }
 
@@ -125,7 +132,7 @@ body {
     font-family: "Nova Flat", system-ui;
     color: rgb(223, 228, 201);
     padding: 5px;
-    border-right: 1.5px solid rgb(249, 61, 61);
+    border-left: 1.5px solid rgb(249, 61, 61);
     border-radius: 10px;
 }
 
@@ -162,6 +169,7 @@ body {
     background: linear-gradient(45deg, #f3ec78, #ff094f);
     background-clip: text;
     align-self: flex-end;
+    margin: 5px;
     border-bottom: 5px double rgb(219, 82, 82);
 }
 
@@ -192,6 +200,7 @@ body {
     background-size: cover;
     border-radius: 100px;
     background-position: -20px;
+    filter: opacity(0.6);
 }
 
 .image-2 {
@@ -260,7 +269,7 @@ body {
     padding: 5px;
     padding-left: 15px;
     border-left: 1px solid rgb(229, 255, 0);
-    border-radius: 5px;
+    border-radius: 2px;
 }
 
 .bread-8 {
@@ -272,7 +281,7 @@ body {
     padding: 5px;
     padding-left: 15px;
     border-left: 1px solid rgb(255, 255, 0);
-    border-radius: 5px;
+    border-radius: 2px;
 }
 
 .bread-9 {
@@ -285,7 +294,7 @@ body {
     padding: 5px;
     padding-left: 15px;
     border-left: 1px solid rgb(255, 251, 0);
-    border-radius: 5px;
+    border-radius: 2px;
 }
 
 .remember {
@@ -293,6 +302,9 @@ body {
     grid-row: 2;
     font-family: "Nova Flat", system-ui;
     font-size: clamp(0.65rem, 1.2vw, 1.18rem);
-    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0px 0px 20px #0D92CE, 0px 0px 100px #0D92CE, 0px 0px 100px #0D92CE, 0px 0px 100px #0D92CE, 0px 0px 100px #0D92CE, 0px 0px 100px #0D92CE, 0px 0px 100px #0D92CE;
-    color: #ffffff;
+    text-shadow: 0 0 5px #ffffff, 0px 0px 100px #0D92CE, 0px 0px 100px #0D92CE, 0px 0px 100px #0D92CE, 0px 0px 100px #0D92CE, 0px 0px 100px #0D92CE, 0px 0px 100px #0D92CE;
+    color: #c8e4ec;
+    margin-left: 5ch;
+    border-bottom: 4px dotted rgba(255, 255, 255, 0.46);
+    border-radius: 10px;
 }
